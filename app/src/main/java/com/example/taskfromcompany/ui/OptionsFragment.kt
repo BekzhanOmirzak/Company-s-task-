@@ -1,11 +1,13 @@
 package com.example.taskfromcompany.ui
 
 import android.content.Intent
-import android.graphics.*
+import android.graphics.BlendMode
+import android.graphics.BlendModeColorFilter
+import android.graphics.PorterDuff
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.*
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
@@ -53,7 +55,7 @@ class OptionsFragment : Fragment() {
         toolBar.title = ""
         informationViewModel = ViewModelProvider(this).get(InformationViewModel::class.java)
         (requireActivity() as AppCompatActivity).setSupportActionBar(toolBar)
-
+        Log.i(TAG, "onViewCreated:  My Options Fragment's ViewModel   ${informationViewModel.hashCode()}")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             toolBar.overflowIcon?.setColorFilter(
                 BlendModeColorFilter(

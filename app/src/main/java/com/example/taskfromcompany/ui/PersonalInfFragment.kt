@@ -36,6 +36,7 @@ class PersonalInfFragment : Fragment(R.layout.personal_information) {
         initToolBar()
         initObservingPersonalInformation()
         initBackButton()
+        Log.i(TAG, "onViewCreated: ${personalViewModel.hashCode()}")
     }
 
     private fun initObservingPersonalInformation() {

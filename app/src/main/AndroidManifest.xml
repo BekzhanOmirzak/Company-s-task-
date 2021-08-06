@@ -11,13 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskFromCompany">
-        <activity android:name=".ui.MenuActivity"></activity>
-        <activity android:name=".ui.LoginActivity">
+        <activity android:name=".testing.TestingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.PersonalInfActivity" />
+        <activity android:name=".ui.MenuActivity" />
+        <activity android:name=".ui.LoginActivity">
+
         </activity>
     </application>
 
