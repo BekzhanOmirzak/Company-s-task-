@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.taskfromcompany.R
@@ -23,7 +24,7 @@ class PersonalInfFragment : Fragment(R.layout.personal_information) {
 
     private lateinit var progressBar: ProgressBar
     private lateinit var linearContainer: LinearLayout
-    private lateinit var showLinearLayout: LinearLayout
+    private lateinit var showScrollView: NestedScrollView
     private lateinit var personalViewModel: InformationViewModel
     private lateinit var myOnBackPressed: MyOnBackPressed
     private lateinit var tool_bar: Toolbar
@@ -43,7 +44,7 @@ class PersonalInfFragment : Fragment(R.layout.personal_information) {
         personalViewModel.returnPersonalInformation().observe(this) {
             if (it != null) {
                 progressBar.visibility = View.GONE
-                showLinearLayout.visibility = View.VISIBLE
+                showScrollView.visibility = View.VISIBLE
                 for (k in PersonalInformation::class.memberProperties) {
                     val text = TextView(requireActivity())
                     text.setLayoutParams(
@@ -65,11 +66,11 @@ class PersonalInfFragment : Fragment(R.layout.personal_information) {
     private fun initProperties(view: View) {
         progressBar = view.findViewById(R.id.progress_bar)
         linearContainer = view.findViewById(R.id.parent_linear)
-        showLinearLayout = view.findViewById(R.id.show_linear)
+        showScrollView = view.findViewById(R.id.scroll_view)
         personalViewModel = ViewModelProvider(this).get(InformationViewModel::class.java)
         personalViewModel.startRequesting()
         progressBar.visibility = View.VISIBLE
-        showLinearLayout.visibility = View.GONE
+        showScrollView.visibility = View.GONE
         tool_bar = view.findViewById(R.id.tool_bar)
         tool_bar.title = ""
 
