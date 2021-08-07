@@ -11,6 +11,7 @@ import com.example.taskfromcompany.viewmodel.LoginPageViewModel
 
 class LoginActivity : AppCompatActivity() {
 
+     //This is a just testing
 
     private val TAG = "MainActivity"
 
